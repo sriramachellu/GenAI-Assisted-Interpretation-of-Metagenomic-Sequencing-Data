@@ -1,0 +1,5 @@
+marker,value
+bacterial_score,0.78
+viral_score,0.12
+inflammation_score,0.34
+sepsis_likelihood,0.05
