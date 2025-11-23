@@ -240,9 +240,13 @@ How open-source tools (DeepSeek, Ollama) can replicate parts of clinical diagnos
 # Future Work
 
 ✔ Integrate actual host RNA-seq signature models
+
 ✔ Add antimicrobial resistance gene detection
+
 ✔ Improve contaminant models using statistical background correction
+
 ✔ Deploy as an interactive web dashboard
+
 ✔ Add a clinical decision support module
 
 
