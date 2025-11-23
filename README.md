@@ -223,7 +223,7 @@ Viral detections (Varicellovirus, Monkeypox) were false positives / contaminants
 
 Visualization:
 
-We generated a UMAP + DBSCAN clustering map to show similarity between microbes using embeddings from sentence-transformers.
+Generated a UMAP + DBSCAN clustering map to show similarity between microbes using embeddings from sentence-transformers.
 
 # Discussion
 
