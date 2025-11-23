@@ -2,7 +2,7 @@
 
 AI Driven Clinical Interpretation of mNGS (Metagenomic Next-Generation Sequencing) Reports
 
-This project demonstrates how GenAI + Python + LLM reasoning can assist in the clinical interpretation of metagenomic sequencing data, similar to workflows used in UCSF Charles Chiu Lab (SURPI+ mNGS).
+This project demonstrates how GenAI + Python + LLM reasoning can assist in the clinical interpretation of metagenomic sequencing data, similar to workflows in labs
 
 It integrates:
 
@@ -158,11 +158,17 @@ Then organisms are collapsed at genus level to reduce duplicates.
 Using Ollama + DeepSeek-R1 8B, we implemented:
 
 ✔️ Contaminant reasoning
+
 ✔️ Pathogen ranking explanation
+
 ✔️ Host response cross-checking
+
 ✔️ Clinical differential diagnosis
-✔️ UCSF-style infectious diseases report
+
+✔️ infectious diseases report
+
 ✔️ “What-if” simulation
+
 ✔️ JSON structured clinical output
 
 The LLM receives a detailed prompt including:
