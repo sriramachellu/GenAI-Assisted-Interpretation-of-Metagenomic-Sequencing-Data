@@ -194,9 +194,21 @@ Recommendations
 # Clinical Report (LLM Output Summary)
 
 Primary pathogen: Escherichia coli
-Secondary candidate: Klebsiella spp.
-Host profile: Strong bacterial signal (0.78), weak viral signal (0.12)
-Interpretation: Bacterial infection is most likely; viruses are low-probability noise.
+
+Secondary candidate: Klebsiella
+
+Overall interpretation: Strong bacterial infection with moderate inflammatory response and very low sepsis risk.
+
+Viral reads (monkeypox/varicellovirus) are false positives or contaminants — host response does not support viral infection.
+
+Recommended actions:
+
+Confirmatory targeted tests for E. coli
+
+Begin empiric coverage for Gram-negative bacteria
+
+Monitor sepsis indicators
+
 
 # Results
 Key Findings
