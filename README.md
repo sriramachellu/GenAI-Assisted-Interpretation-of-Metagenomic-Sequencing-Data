@@ -270,6 +270,108 @@ UMAP-learn
 
 Sentence Transformers
 
+
+# Phase 2 Update — PubMed RAG Integration + Clinical-Grade Prompting
+
+Phase 2 significantly enhances the pipeline by adding literature-aware reasoning, safer clinical interpretation, and LLM hallucination-prevention mechanisms. This upgrade transforms the project from a pure signal-based interpreter to a clinically contextual, RAG-supported infectious disease analysis system.
+
+1. PubMed RAG (Retrieval-Augmented Generation) Integration
+
+We added a lightweight PubMed retrieval module using NCBI Entrez (esearch + efetch):
+
+Automatically fetches literature for each detected organism
+
+Uses curated synonym expansion (TAXON_MAP) for more accurate queries
+
+Retrieves three evidence channels:
+
+Clinical infection evidence (case reports, bacteremia, sepsis, pneumonia)
+
+Contaminant evidence (reagent/skin/kitome contaminants)
+
+mNGS-specific evidence (studies where the organism appears in sequencing datasets)
+
+This allows the model to ground its reasoning in real medical literature without injecting new microbes into the interpretation.
+
+2. Evidence-Aware & Safety-Controlled Prompt Redesign
+
+The LLM prompt was fully rewritten to enforce strict clinical rules:
+
+Only organisms detected in the mNGS report may be interpreted
+
+RAG evidence is contextual only (NEVER treated as new detections)
+
+RAG output is summarized numerically (counts only, not abstracts)
+
+Prevents hallucinated organisms, infections, lab values, or clinical scenarios
+
+Creates a structured clinical reasoning workflow with:
+
+Pathogen assessment
+
+Host response integration
+
+Contaminant assessment
+
+Sepsis risk evaluation
+
+Differential diagnosis
+
+What-if simulations
+
+Final clinician summary
+
+This transforms the LLM from a generic assistant into a controlled infectious disease decision-support agent.
+
+3. Unified Microbial + PubMed Evidence Output
+
+Each microbial candidate now has attached RAG metadata:
+
+{
+  "clinical_evidence": [...],
+  "contaminant_evidence": [...],
+  "mngs_evidence": [...]
+}
+
+
+The LLM can now state:
+
+“RAG evidence supports the pathogenicity of Escherichia coli (5 clinical reports).”
+
+—without ever inventing new organisms or data.
+
+4. Improved Clinical Interpretation (Phase 2 Output Example)
+
+The enhanced LLM now correctly integrates RAG:
+
+Confirms Escherichia coli and Klebsiella as high-relevance pathogens
+
+Uses literature counts to strengthen reasoning
+
+Down-ranks Aeromonas, Comamonas, Brevibacterium as contaminants
+
+Produces more robust explanations and justifications
+
+Maintains strict adherence to detected organisms and host-response data
+
+This results in a safer, more clinician-realistic mNGS report.
+
+# Summary of Phase 2 Improvements
+
+Added PubMed-backed RAG pipeline
+
+Added organism synonym mapping
+
+Added evidence triage (clinical, contaminant, mNGS)
+
+Redesigned LLM prompt for safety & clinical structure
+
+Eliminated hallucinations of new microbes
+
+Enabled literature-supported pathogen reasoning
+
+Produced more accurate, transparent clinical outputs
+
 Matplotlib & Seaborn
 
 CUDA GPU acceleration
